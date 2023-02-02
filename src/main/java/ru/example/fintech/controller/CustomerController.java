@@ -23,11 +23,6 @@ public class CustomerController {
         return customerService.findAll();
     }
 
-    @GetMapping("/{id}")
-    public CustomerDto getById(@PathVariable("id") int id){
-        return customerService.findById(id);
-    }
-
     @PostMapping
     public void create (@RequestBody CustomerDto customerDto){
         customerService.create(customerDto);

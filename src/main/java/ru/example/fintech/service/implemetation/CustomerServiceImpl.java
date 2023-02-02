@@ -40,22 +40,6 @@ public class CustomerServiceImpl implements CustomerService {
         return customersDto;
     }
 
-
-    @Override
-    public CustomerDto findById(int id) {
-        try {
-            Customer customer = customerDao.findById(id);
-            CustomerDto customerDto = CustomerToCustomerDto(customer);
-            List<Integer> accountsId = new ArrayList<>();
-            accountDao.findAll(customer.getId()).forEach(account -> accountsId.add(account.getId()));
-            customerDto.setAccountsId(accountsId);
-            return customerDto;
-
-        } catch (RuntimeException e) {
-            throw new ApiRequestException("Пользователь не существует");
-        }
-    }
-
     @Override
     public void create(CustomerDto customerDto) {
         Customer customer = new Customer(customerDto.getFirstName(), customerDto.getLastName(),

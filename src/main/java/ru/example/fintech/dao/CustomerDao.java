@@ -14,12 +14,6 @@ public interface CustomerDao {
      */
     List<Customer> findAll();
 
-    /**
-     *
-     * @param id
-     * @return
-     */
-    Customer findById(int id);
 
     /**
      *

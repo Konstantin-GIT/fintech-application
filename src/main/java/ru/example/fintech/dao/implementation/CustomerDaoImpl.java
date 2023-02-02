@@ -26,13 +26,6 @@ public class CustomerDaoImpl implements CustomerDao {
         return customers;
     }
 
-    @Override
-    public Customer findById(int id){
-        EntityManager entityManager = getEntityManagerWithTransaction();
-        Customer customer = entityManager.find(Customer.class, id);
-        closeEntityManager(entityManager);
-        return customer;
-    }
 
     @Override
     public void create(Customer customer){

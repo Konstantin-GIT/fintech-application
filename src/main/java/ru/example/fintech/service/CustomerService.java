@@ -9,12 +9,7 @@ public interface CustomerService {
 
     List<CustomerDto> findAll();
 
-
-    CustomerDto findById(int id);
-
-
     void create(CustomerDto customerDto);
-
 
     void update(int id, CustomerDto customerDto);
 

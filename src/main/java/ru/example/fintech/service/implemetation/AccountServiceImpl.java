@@ -27,9 +27,6 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public List<AccountDto> findAll(int customerId) {
-       if (customerDao.findById(customerId) == null){
-           throw new ApiRequestException("Пользователь не существует");
-       }
 
         List<AccountDto> accountsDto = new ArrayList<>();
             List<Account> accounts = accountDao.findAll(customerId);

@@ -37,4 +37,10 @@ public class CustomerController {
     public void delete (@PathVariable("id") int id){
         customerService.delete(id);
     }
+
+    @GetMapping("/{id}")
+    public CustomerDto getById(@PathVariable("id") int id) {
+        return customerService.findById(id);
+    }
+
 }

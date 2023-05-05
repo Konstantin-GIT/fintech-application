@@ -63,4 +63,12 @@ public class CustomerDaoImpl implements CustomerDao {
         entityManager.getTransaction().begin();
         return entityManager;
     }
+
+    @Override
+    public Customer findById(int id) {
+        EntityManager entityManager = getEntityManagerWithTransaction();
+        Customer customer = entityManager.find(Customer.class, id);
+        closeEntityManager(entityManager);
+        return customer;
+    }
 }

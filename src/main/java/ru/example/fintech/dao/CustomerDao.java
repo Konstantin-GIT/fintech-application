@@ -33,4 +33,6 @@ public interface CustomerDao {
      * @param id
      */
     void delete(int id);
+
+    Customer findById(int id);
 }
